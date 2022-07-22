@@ -2,7 +2,8 @@ import { serve } from "linkTest"
 
 class Express{
     route: any = {
-        GET: []
+        GET: [],
+        POST: []
     }
 
     get(pathname: string, handler: () => Response | Promise<Response>){

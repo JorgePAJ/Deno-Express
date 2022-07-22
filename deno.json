@@ -1,6 +1,6 @@
 {
     "tasks": {
-        "start" : "deno run --allow-net --watch app.ts"
+        "start" : "deno run --allow-net --watch=src/  src/app.ts"
     },
     "importMap": "./import_map.json"
 }
