@@ -15,14 +15,20 @@ class Express{
     listen(port:number, cb: () => void){
         serve(
             (req) => {
-                return new Response(
-                    JSON.stringify({message: 'Express'}),
-                    {
-                        headers:{
-                            'Content-Type': 'application/json'
-                        }
-                    }
-                )
+                const {pathname} = new URL(req.url);
+
+                const find = this.route.GET.find((route: any) => route.pathname === pathname)
+
+                if(!find){
+                    return new Response(
+                        JSON.stringify({message: 'Route not found'}),
+                        {
+                            headers:{
+                                'Content-Type': 'application/json'
+                            }
+                })}
+
+                return find.handler(req)
             },
             {
                 port,

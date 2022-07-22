@@ -13,6 +13,17 @@ app.get("/", () => {
     )
 })
 
+app.get("/pets", () => {
+    return new Response(
+        JSON.stringify({Name: 'Marie', Age: '2', Color: 'Black and white', owner: "Jorge"}),
+        {
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        }
+    )
+})
+
 app.listen(
     4003,
     () => {
