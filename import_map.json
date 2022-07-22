@@ -1,5 +1,8 @@
 {
     "imports": {
-        "linkTest" :"https://deno.land/std@0.149.0/http/server.ts"
+        "linkTest" :"https://deno.land/std@0.149.0/http/server.ts",
+        "react" : "https://esm.sh/react",
+        "react-dom/server" : "https://esm.sh/react-dom/server",
+        "react-dom/client"  : "https://esm.sh/react-dom/client"
     }
 }

@@ -1,4 +1,7 @@
 import Express from "./Express.ts"
+import Button from "./react/Button.tsx"
+import {renderToString} from "react-dom/server"
+import App from "./react/App.tsx"
 
 const app = new Express()
 
@@ -12,6 +15,18 @@ app.get("/", () => {
         }
     )
 })
+
+app.get("/react-test", () => {
+    return new Response(
+        renderToString(Button()),
+        {
+            headers:{
+                'Content-Type': 'text/html'
+            }
+        }
+    )
+})
+
 app.get("/watch", () => {
     return new Response(
         JSON.stringify({message: 'If you see me, then it works'}),
