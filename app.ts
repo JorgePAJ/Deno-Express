@@ -12,6 +12,16 @@ app.get("/", () => {
         }
     )
 })
+app.get("/watch", () => {
+    return new Response(
+        JSON.stringify({message: 'If you see me, then it works'}),
+        {
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        }
+    )
+})
 
 app.get("/pets", () => {
     return new Response(
